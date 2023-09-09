@@ -22,6 +22,7 @@
 
 <body>
 
+    <!-- hero -->
     <section id="hero">
         <div class="hero w-100 p-3 mx-auto text-center d-flex justify-content-center align-items-center text-white">
             <main>
@@ -29,10 +30,44 @@
                 <h1>Danny & ----</h1>
                 <p>Akan melangsungkan resepsi pernikahan dalam :</p>
                 <div class="simply-countdown"></div>
-                <a href="#undangan" class="btn btn-lg mt-4">Lihat undangan</a>
+                <a href="#undangan" class="btn btn-lg btn mt-5 rounded-5 ">Lihat undangan</a>
             </main>
         </div>
     </section>
+    <!-- end of hero -->
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-md bg-body-tertiary sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Daoc Wedding</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar"
+                aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- body -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                aria-labelledby="offcanvasNavbarLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Daoc Wedding</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body ">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link" href="#home">Home</a>
+                        <a class="nav-link" href="#info">Info</a>
+                        <a class="nav-link" href="#story">Story</a>
+                        <a class="nav-link" href="#gallery">Gallery</a>
+                        <a class="nav-link" href="#rsvp">RSVP</a>
+                        <a class="nav-link" href="#gifts">Gifts</a>
+                    </div>
+                </div>
+            </div>
+            <!-- end of body -->
+
+        </div>
+    </nav>
+    <!-- end of navbar -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
