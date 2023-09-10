@@ -122,6 +122,7 @@
     </section>
     <!-- end of home -->
 
+    <!-- informasi -->
     <section id="info" class="info">
         <div class="container">
             <div class="row justify-content-center">
@@ -188,7 +189,7 @@
             </div>
         </div>
     </section>
-
+    <!-- end of informasi -->
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
@@ -206,6 +207,19 @@
                 minutes: { singular: 'Menit', plural: 'Menit' },
                 seconds: { singular: 'Detik', plural: 'Detik' }
             },
+        });
+    </script>
+
+    <script>
+        const stickyTop = document.querySelector('.sticky-top');
+        const offcanvas = document.querySelector('.offcanvas');
+
+        offcanvas.addEventListener('show.bs.offcanvas', function () {
+            stickyTop.style.overflow = 'visible';
+        });
+
+        offcanvas.addEventListener('hidden.bs.offcanvas', function () {
+            stickyTop.style.overflow = 'hidden';
         });
     </script>
 </body>
