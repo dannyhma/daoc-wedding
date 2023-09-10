@@ -434,6 +434,20 @@
     </footer>
     <!-- end of footer -->
 
+    <!-- play audio -->
+    <section id="play-audio">
+        <div class="audio-container">
+            <audio id="song" autoplay loop>
+                <source src="audio/Tiara_Andini_Arsy_Widianto_Cintanya Aku.mp3" type="audio/mp3">
+            </audio>
+
+            <div class="audio-icon-wrapper" style="display: none;">
+                <i class="bi bi-disc"></i>
+            </div>
+        </div>
+    </section>
+    <!-- end of play audio -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
@@ -473,14 +487,18 @@
     <!-- disable scroll -->
     <script>
         const rootElement = document.querySelector(":root");
+        const audioIconWrapper = document.querySelector('.audio-icon-wrapper');
+        const audioIcon = document.querySelector('.audio-icon-wrapper i');
+        const song = document.querySelector('#song');
+        let isPlaying = false;
 
         function disableScroll() {
             scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
 
             window.onscroll = function () {
-                window.scrollTo(scrollLeft, scrollTop);
-            };
+                window.scrollTo(scrollTop, scrollLeft);
+            }
 
             rootElement.style.scrollBehavior = 'auto';
         }
@@ -488,12 +506,35 @@
         function enableScroll() {
             window.onscroll = function () { }
             rootElement.style.scrollBehavior = 'smooth';
-            localStorage.setItem('opened', true);
+            // localStorage.setItem('opened', true);
+            playAudio()
         }
 
-        if (!localStorage.getItem('opened')) {
-            disableScroll();
+        // if (!localStorage.getItem('opened')) {
+        //     disableScroll();
+        // }
+
+        function playAudio() {
+            song.volume = 0.6;
+            audioIconWrapper.style.display = 'flex';
+            song.play();
+            isPlaying = true;
         }
+
+        audioIconWrapper.onclick = function () {
+            if (isPlaying) {
+                song.pause();
+                audioIcon.classList.remove('bi-disc');
+                audioIcon.classList.add('bi-pause-circle');
+            } else {
+                song.play();
+                audioIcon.classList.add('bi-disc');
+                audioIcon.classList.remove('bi-pause-circle');
+            }
+            isPlaying = !isPlaying;
+        }
+
+        disableScroll();
     </script>
 
     <!-- google sheet -->
