@@ -33,7 +33,7 @@
                 <h1>Danny & ----</h1>
                 <p>Akan melangsungkan resepsi pernikahan dalam :</p>
                 <div class="simply-countdown"></div>
-                <a href="#undangan" class="btn btn-lg btn mt-5 rounded-5 ">Lihat undangan</a>
+                <a href="#home" class="btn btn-lg btn mt-5" onclick="enableScroll()">Lihat undangan</a>
             </main>
         </div>
     </section>
@@ -265,7 +265,7 @@
             <div class="row justify-content-center">
                 <div class="col md-8 col-10 text-center">
                     <span>
-                        Memory Kisah Kampi
+                        Memory Kisah Kami
                     </span>
                     <h2>Gallery Foto</h2>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro non eaque totam earum molestias?
@@ -321,12 +321,126 @@
     </section>
     <!-- end of gellery -->
 
+    <!-- rsvp -->
+    <section id="rsvp" class="rsvp">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col md-8 col-10 text-center">
+                    <h2>Konfirmasi Kehadiran</h2>
+                    <p>Isi form di bawah ini untuk melakukan konfirmasi kehadiran</p>
+                </div>
+            </div>
+
+            <form class="row row-cols-md-auto g-3 align-items-center justify-content-center" method="POST"
+                action="https://script.google.com/macros/s/AKfycbw4TpcWy7JickxKMHAMqtv3bo-xfhLuvxPPpGZsmWDr9npf5vibmGei8sEmG4YMMINaqA/exec"
+                id="my-form">
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="nama" class="form-label">Nama</label>
+                        <input type="text" class="form-control" id="nama" name="nama">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="jumlah" class="form-label">Jumlah</label>
+                        <input type="number" class="form-control" id="jumlah" name="jumlah" min="1" max="10" length="1"
+                            value="1">
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="mb-3">
+                        <label for="status" class="form-label">Konfirmasi Kehadiran</label>
+                        <select name="status" id="status" class="form-select">
+                            <option selected>Pilih salah satu</option>
+                            <option value="Hadir">Hadir</option>
+                            <option value="Tidak Hadir">Tidak Hadir</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-12" style="margin-top: 35px;">
+                    <button class="btn btn-secondary">Kirim</button>
+                </div>
+            </form>
+        </div>
+    </section>
+    <!-- end of rsvp -->
+
+    <!-- gifts -->
+    <section id="gifts" class="gifts">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col md-8 col-10 text-center">
+                    <span>Ungkapan tanda kasih</span>
+                    <h2>Kirim Hadiah</h2>
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat cum facere rem blanditiis
+                        labore iure.</p>
+                </div>
+            </div>
+
+            <div class="row justify-content-center text-center">
+                <div class="col-md-6">
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <div class="d-block fw-bold mb-1"> Mandiri </div>
+                            1234567890 - Danny Himawan
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-block fw-bold mb-1"> OVO, Dana, LinkAja </div>
+                            1234567890 - Danny Himawan
+                        </li>
+                        <li class="list-group-item">
+                            <div class="d-block fw-bold mb-1"> QR Code</div>
+                            <img src="" alt="QR Code" class="img-thumbnail" width="150">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- gifts -->
+
+    <!-- footer -->
+    <footer>
+        <div class="container py-5">
+            <div class="row">
+                <div class="col text-center">
+                    <small>&copy;2023 Daoc Wedding. All Rights Reserved.</small>
+                    <small>Design by <a href="#footer"
+                            class="text-decoration-none fw-bold text-primary">@----</a></small>
+                    <ul class="list-group list-group-horizontal justify-content-center py-4">
+                        <li class="list-unstyled px-3">
+                            <a href="#">
+                                <i class="bi bi-instagram"></i>
+                            </a>
+                        </li>
+                        <li class="list-unstyled px-3">
+                            <a href="#">
+                                <i class="bi bi-facebook"></i>
+                            </a>
+                        </li>
+                        <li class="list-unstyled px-3">
+                            <a href="#">
+                                <i class="bi bi-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="list-unstyled px-3">
+                            <a href="#">
+                                <i class="bi bi-whatsapp"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+    </footer>
+    <!-- end of footer -->
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/bs5-lightbox@1.8.3/dist/index.bundle.min.js"></script>
 
+    <!-- countdown -->
     <script>
         simplyCountdown('.simply-countdown', {
             year: 2026, // required
@@ -342,6 +456,7 @@
         });
     </script>
 
+    <!-- offcanvas -->
     <script>
         const stickyTop = document.querySelector('.sticky-top');
         const offcanvas = document.querySelector('.offcanvas');
@@ -352,6 +467,51 @@
 
         offcanvas.addEventListener('hidden.bs.offcanvas', function () {
             stickyTop.style.overflow = 'hidden';
+        });
+    </script>
+
+    <!-- disable scroll -->
+    <script>
+        const rootElement = document.querySelector(":root");
+
+        function disableScroll() {
+            scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
+
+            window.onscroll = function () {
+                window.scrollTo(scrollLeft, scrollTop);
+            };
+
+            rootElement.style.scrollBehavior = 'auto';
+        }
+
+        function enableScroll() {
+            window.onscroll = function () { }
+            rootElement.style.scrollBehavior = 'smooth';
+            localStorage.setItem('opened', true);
+        }
+
+        if (!localStorage.getItem('opened')) {
+            disableScroll();
+        }
+    </script>
+
+    <!-- google sheet -->
+    <script>
+        window.addEventListener("load", function () {
+            const form = document.getElementById('my-form');
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+                const data = new FormData(form);
+                const action = e.target.action;
+                fetch(action, {
+                    method: 'POST',
+                    body: data,
+                })
+                    .then(() => {
+                        alert("Konfirmasi kehadiran berhasil");
+                    })
+            });
         });
     </script>
 </body>
